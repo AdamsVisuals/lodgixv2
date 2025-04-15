@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LodgiX Pro - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="icon" href="./favicon_io" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon_io" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard-pro.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <!-- Premium Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="images/LodgiX Logo Transparent.png" alt="LodgiX Pro" class="logo">
+                    <span class="pro-badge">PRO</span>
+                </div>
+                <button class="collapse-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-title">MAIN</div>
+                    <ul>
+                        <li>
+                            <a href="dashboard.html" class="nav-link active">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                                <span class="nav-badge new">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="analytics.html" class="nav-link">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">OPERATIONS</div>
+                    <ul>
+                        <li>
+                            <a href="rooms-management.html" class="nav-link">
+                                <i class="fas fa-bed"></i>
+                                <span>Room Management</span>
+                                <span class="nav-badge">5</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="guest-management.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Guest Management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bookings.html" class="nav-link">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Booking Management</span>
+                                <span class="nav-badge urgent">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="housekeeping.html" class="nav-link">
+                                <i class="fas fa-broom"></i>
+                                <span>Housekeeping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">ADMINISTRATION</div>
+                    <ul>
+                        <li>
+                            <a href="staff-management.html" class="nav-link">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Staff Management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="inventory.html" class="nav-link">
+                                <i class="fas fa-boxes"></i>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reports.html" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="settings.html" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                    <button class="user-menu-btn"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                    <h2 id="page-title">Dashboard</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="header-btn" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="header-btn" title="Messages">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button class="header-btn" title="Calendar">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        
+                        <div class="dark-mode-toggle">
+                            <input type="checkbox" id="dark-mode-switch" checked>
+                            <label for="dark-mode-switch"></label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section">
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Rooms</h3>
+                            <p id="total-rooms">42</p>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 12%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Occupied</h3>
+                            <p id="occupied-rooms">28</p>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 8%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Today's Revenue</h3>
+                            <p id="today-revenue">$5,420</p>
+                            <div class="stat-trend down">
+                                <i class="fas fa-arrow-down"></i> 3%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>New Guests</h3>
+                            <p id="new-guests">14</p>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 22%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="dashboard-grid">
+                    <!-- Row 1 -->
+                    <div class="grid-card wide">
+                        <div class="card-header">
+                            <h3>Revenue Overview</h3>
+                            <div class="card-actions">
+                                <select class="time-filter">
+                                    <option>This Week</option>
+                                    <option selected>This Month</option>
+                                    <option>This Year</option>
+                                </select>
+                                <button class="card-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-card">
+                        <div class="card-header">
+                            <h3>Occupancy Rate</h3>
+                            <div class="card-actions">
+                                <button class="card-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="occupancy-gauge">
+                                <div class="gauge" id="occupancy-gauge">
+                                    <div class="gauge-body">
+                                        <div class="gauge-fill"></div>
+                                    </div>
+                                    <div class="gauge-cover">67%</div>
+                                </div>
+                                <div class="occupancy-stats">
+                                    <div class="occupancy-stat">
+                                        <span class="stat-label">Available</span>
+                                        <span class="stat-value">14</span>
+                                    </div>
+                                    <div class="occupancy-stat">
+                                        <span class="stat-label">Occupied</span>
+                                        <span class="stat-value">28</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid-card">
+                        <div class="card-header">
+                            <h3>Room Types</h3>
+                            <div class="card-actions">
+                                <button class="card-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="roomTypeChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-card">
+                        <div class="card-header">
+                            <h3>Recent Bookings</h3>
+                            <div class="card-actions">
+                                <button class="card-btn"><i class="fas fa-sync-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="booking-list">
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="booking-room">Deluxe #205</div>
+                                        <div class="booking-guest">Michael Brown</div>
+                                        <div class="booking-dates">Jun 15 - Jun 20</div>
+                                    </div>
+                                    <div class="booking-status confirmed">Confirmed</div>
+                                </div>
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="booking-room">Suite #301</div>
+                                        <div class="booking-guest">Sarah Johnson</div>
+                                        <div class="booking-dates">Jun 16 - Jun 18</div>
+                                    </div>
+                                    <div class="booking-status pending">Pending</div>
+                                </div>
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="booking-room">Standard #102</div>
+                                        <div class="booking-guest">Robert Wilson</div>
+                                        <div class="booking-dates">Jun 17 - Jun 22</div>
+                                    </div>
+                                    <div class="booking-status confirmed">Confirmed</div>
+                                </div>
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="booking-room">Deluxe #208</div>
+                                        <div class="booking-guest">Emily Davis</div>
+                                        <div class="booking-dates">Jun 18 - Jun 25</div>
+                                    </div>
+                                    <div class="booking-status cancelled">Cancelled</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-card">
+                        <div class="card-header">
+                            <h3>Tasks</h3>
+                            <div class="card-actions">
+                                <button class="card-btn"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="task-list">
+                                <div class="task-item">
+                                    <label class="task-check">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <div class="task-content">
+                                        <div class="task-title">Prepare monthly report</div>
+                                        <div class="task-meta">
+                                            <span class="task-priority high">High</span>
+                                            <span class="task-due">Today</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <label class="task-check">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <div class="task-content">
+                                        <div class="task-title">Check inventory</div>
+                                        <div class="task-meta">
+                                            <span class="task-priority medium">Medium</span>
+                                            <span class="task-due">Tomorrow</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <label class="task-check">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <div class="task-content">
+                                        <div class="task-title completed">Staff meeting</div>
+                                        <div class="task-meta">
+                                            <span class="task-priority low">Low</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <label class="task-check">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <div class="task-content">
+                                        <div class="task-title">Update room prices</div>
+                                        <div class="task-meta">
+                                            <span class="task-priority medium">Medium</span>
+                                            <span class="task-due">Jun 20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections would go here -->
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.1.0/dist/chartjs-adapter-luxon.min.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/dashboard-pro.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

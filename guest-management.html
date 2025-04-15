@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LodgiX Pro - Guest Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="icon" href="./favicon_io" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon_io" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard-pro.css">
+    <link rel="stylesheet" href="css/guest-management.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <!-- Premium Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="images/LodgiX Logo Transparent.png" alt="LodgiX Pro" class="logo">
+                    <span class="pro-badge">PRO</span>
+                </div>
+                <button class="collapse-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-title">MAIN</div>
+                    <ul>
+                        <li>
+                            <a href="dashboard.html" class="nav-link active">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                                <span class="nav-badge new">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="analytics.html" class="nav-link">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">OPERATIONS</div>
+                    <ul>
+                        <li>
+                            <a href="rooms-management.html" class="nav-link">
+                                <i class="fas fa-bed"></i>
+                                <span>Room Management</span>
+                                <span class="nav-badge">5</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="guest-management.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Guest Management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bookings.html" class="nav-link">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Booking Management</span>
+                                <span class="nav-badge urgent">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="housekeeping.html" class="nav-link">
+                                <i class="fas fa-broom"></i>
+                                <span>Housekeeping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">ADMINISTRATION</div>
+                    <ul>
+                        <li>
+                            <a href="staff-management.html" class="nav-link">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Staff Management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="inventory.html" class="nav-link">
+                                <i class="fas fa-boxes"></i>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reports.html" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="settings.html" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                    <button class="user-menu-btn"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                    <h2 id="page-title">Guest Management</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="header-btn" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="header-btn" title="Messages">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button class="header-btn" title="Calendar">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        
+                        <div class="dark-mode-toggle">
+                            <input type="checkbox" id="dark-mode-switch" checked>
+                            <label for="dark-mode-switch"></label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+                <!-- Guest Management Section -->
+                <section id="guest-management-section" class="content-section">
+                    <div class="guest-management-header">
+                        <h2>Guest Management</h2>
+                        <div class="guest-actions">
+                            <button class="btn btn-primary" id="add-guest-btn">
+                                <i class="fas fa-plus"></i> Add Guest
+                            </button>
+                            <div class="search-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="guest-search" placeholder="Search guests...">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="guest-filters">
+                        <div class="filter-group">
+                            <label for="guest-status-filter">Status:</label>
+                            <select id="guest-status-filter">
+                                <option value="all">All Guests</option>
+                                <option value="checked-in">Checked In</option>
+                                <option value="checked-out">Checked Out</option>
+                                <option value="vip">VIP Guests</option>
+                                <option value="loyalty">Loyalty Members</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-secondary" id="export-guest-btn">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+            
+                    <div class="guest-table-container">
+                        <table class="guest-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Room</th>
+                                    <th>Check-in</th>
+                                    <th>Check-out</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="guest-table-body">
+                                <!-- Guest data will be inserted here -->
+                            </tbody>
+                        </table>
+                        <div class="pagination-controls">
+                            <button class="btn btn-sm" id="prev-page"><i class="fas fa-chevron-left"></i></button>
+                            <span id="page-info">Page 1 of 1</span>
+                            <button class="btn btn-sm" id="next-page"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+            
+                    <!-- Guest Modal -->
+                    <div id="guest-modal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="guest-modal-title">Add New Guest</h3>
+                                <button class="close-modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="guest-form">
+                                    <input type="hidden" id="guest-id">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="guest-first-name">First Name*</label>
+                                            <input type="text" id="guest-first-name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guest-last-name">Last Name*</label>
+                                            <input type="text" id="guest-last-name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guest-email">Email*</label>
+                                        <input type="email" id="guest-email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guest-phone">Phone*</label>
+                                        <input type="tel" id="guest-phone" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="check-in-date">Check-in Date*</label>
+                                            <input type="datetime-local" id="check-in-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="check-out-date">Check-out Date*</label>
+                                            <input type="datetime-local" id="check-out-date" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="assigned-room">Assign Room*</label>
+                                        <select id="assigned-room" required>
+                                            <option value="">Select available room</option>
+                                            <!-- Rooms will be populated by JavaScript -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guest-address">Address</label>
+                                        <textarea id="guest-address" rows="2"></textarea>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="guest-country">Country</label>
+                                            <input type="text" id="guest-country">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guest-id-type">ID Type</label>
+                                            <select id="guest-id-type">
+                                                <option value="passport">Passport</option>
+                                                <option value="driver-license">Driver's License</option>
+                                                <option value="id-card">National ID</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guest-id-number">ID Number</label>
+                                            <input type="text" id="guest-id-number">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="guest-status">Status</label>
+                                            <select id="guest-status">
+                                                <option value="active">Active</option>
+                                                <option value="vip">VIP</option>
+                                                <option value="blacklisted">Blacklisted</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guest-loyalty">Loyalty Points</label>
+                                            <input type="number" id="guest-loyalty" min="0" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guest-notes">Special Notes</label>
+                                        <textarea id="guest-notes" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-secondary" id="cancel-guest-btn">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" id="save-guest-btn">Save Guest</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/guest-management.js"></script>
+</body>
+</html>
